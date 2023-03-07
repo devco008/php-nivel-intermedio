@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>POO y MVC en PHP</title>
+
+		<meta name="description" content="Presentación de curso phpoo Y mvc">
+		<meta name="author" content="Carlos Ochoa">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/solarized.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<img style="" src="images/logo.png">
+					<h1 style="font-size:120%; line-height: 110%">DESARROLLO WEB CON PHPOO y el Patrón MVC</h1>
+					<h3 class="inverse" style="font-size:80%">&nbsp;Coop. de Trabajo Tecnomatica Ltda.&nbsp;</h3>					
+					<h5>Matrícula INAES: 47735</h5>						
+				</section>
+
+				<section>
+					<h2>Introducci&oacute;n</h2>
+					<p>
+						"Cualquier idiota puede escribir codigo que un ordenador entienda, los buenos programadores escriben codigo que los humanos pueden entender"
+					</p>					
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>Paso 1</h2>
+						<p>
+							Introducción a la Programacion Orientada a Objetos
+						</p>						
+					</section>
+					<section>
+						<h2>Introduccion</h2>
+						<p>
+							La POO es un paradigma de programación (o técnica de programación) que utiliza objetos e interacciones en el diseño del sistema.
+						</p>						
+					</section>
+					<section>
+						<p>
+							<img src="images/poo.jpeg" alt="Objetos" width="600px" >
+						</p>
+					</section>
+					<section>
+						<h2>Elementos de la POO</h2>
+						<p>
+							La POO esta compuesta por una serie de elementos que se detallan a continuacion:
+						</p>
+						
+					</section>
+					<section>
+						<h2>Elementos de la POO: <b>Clase</b></h2>
+						<p>
+							Una clase es un <b>modelo</b> que se utiliza para crear objetos que comparten un mismo comportamiento.	
+						</p>
+						<pre>
+							<code data-trim contenteditable>
+							class Persona(){
+								#Propiedades
+								#Metodos
+							}
+						</code>	
+						</pre>
+						
+					</section>
+					<section>
+						<h2>Elementos de la POO: Objeto</h2>
+						<p>
+							Es una <b>entidad</b> proviste de métodos o mensajes a los cuales responde (Comportamiento), atributos con valores concretos (estado); y propiedades (identidad).
+						</p>
+						<pre>
+							<code data-trim contenteditable>$persona = new Persona();</code>	
+						</pre>
+						
+					</section>	
+					<section>
+						<h2>Elementos de la POO: <b>Método</b></h2>
+						<p>
+							Es el algoritmo asociado a un objeto que indica la capacidad de lo que éste puede hacer
+						</p>
+						<pre>
+							<code data-trim contenteditable>function caminar() {...}</code>	
+						</pre>
+					</section>
+					<section>
+						<h2>Elementos de la POO: Propiedades y atributos</h2>
+						<p>
+							Las propiedades y atributos, son <b>variables</b> que contienen datos asociados a un objeto.
+						</p>
+						<pre>
+							<code data-trim contenteditable>
+								$nombre = 'Juan';
+								$edad = '25 años';
+								$altura = '1,75 mts.';
+							</code>	
+						</pre>
+					</section>
+					<section>
+						<h2>Evento y Mensaje</h2>
+						<p>
+							Un <b>evento</b> es un <s>suceso</s> en el sistema mientras que un  <b>mensaje</b> es la comunicación del suceso dirigido al objeto.
+						</p>						
+					</section>
+					<section>
+						<h2>Caracteristicas conceptuales de la POO</h2>
+						<p>La POO debe guardar ciertar caracteristicas que la identifican y diferencian de otros paradigmas de programacion. Dichas caracteristicas se describen a continuación</p>
+					</section>
+					<section>
+						<h2>Abstracción</h2>
+						<p>Aislacion de un elemento de su contexto. Define las caracteristicas esenciales de un objeto</p>
+					</section>
+					<section>
+						<h2>Encapsulamiento</h2>
+						<p>Reúne el mismo nivel de abstracción, a todos los elementos que puedan considerearse pertenencientesa una misma entidad.</p>
+					</section>
+					<section>
+						<h2>Modularidad</h2>
+						<p>
+							Caracteristica que permite dividir una aplicación en varias partes mas pequeñas (denominada modulos), independientes unas de otras.
+						</p>
+					</section>
+					<section>
+						<h2>Ocultación (aislamiento)</h2>
+						<p>
+							Los objetos estan aislados del exterior, protegiendo a sus propiedades para no ser modificadas por aquellos que no tengan a accder a los mismas.
+						</p>
+					</section>
+					<section>
+						<h2>Polimorfismo</h2>
+						<p>Es la capacidad que da a diferentes objetos, la posibilidad de contar con métodos, propiedades y atributos de igual nombre, sin que los de un objeto interfieran con el de otro</p>
+					</section>
+					<section>
+						<h2>Herencia</h2>
+						<p>Es la relación existente entre dos o mas clases, donde una es la principal (madre) y otras son secundarias y dependen (heredan) de ellas (clases "hijas"), donde a la vez, los objetos heredan las caracteristicas de los objetos de los cuales heredan</p>
+					</section>
+					<section>
+						<h2>Recolección de basura</h2>
+						<p>Es la técnica que consiste en destruir aquellos objetos cuando ya no son necesarios, liberándolos de la memoria.</p>
+					</section>
+
+				</section>		
+				<section>
+					<section>
+						<h2>Paso 2</h2>
+						<p>Programación Orientada a Objetos en PHP 5</p>
+					</section>
+					<section>
+						<h2>Definición de Clase</h2>
+						<p>[...] “una colección de variables y funciones que trabajan con estas variables. 		Las variables se definen utilizando <b>var</b> y las funciones utilizando <b>function</b>” [...]
+						</p>
+					</section>
+					<section>
+						<p>
+							[...] “La definición básica de clases comienza con la palabra clave class, seguido por un nombre de clase, continuado por un par de llaves que encierran las definiciones de las propiedades y métodos pertenecientes a la clase. El nombre de clase puede ser cualquier etiqueta válida que no sea una palabra reservada de PHP. Un nombre válido de clase comienza con una letra o un guión bajo, seguido de la cantidad de letras, números o guiones bajos que sea.” [...]
+
+						</p>
+						<pre><code data-trim contenteditable>
+							class NombreClase {...}
+						</code></pre>
+					</section>
+					<section>
+						<h2>Clases Abstractas</h2>
+						<p>
+							Las clases abstractas son aquellas que no necesitan ser instanciadas pero sin embargo, serán heredadas en algún momento. Se definen anteponiendo la palabra clave abstract a class:
+						</p>
+						<pre><code data-trim contenteditable>
+							abstract class NombreClaseAbstracta {...}
+						</code></pre>
+					</section>
+					<section>
+						<h2>Herencia de Clases</h2>
+						<p>
+							Los objetos pueden heredar propiedades y métodos de otros objetos. Para ello, PHP permite la “extensión” (herencia) de clases, cuya característica representa la relación existente entre diferentes objetos. Para definir una clase como extención de una clase “madre” se utiliza la palabra clave extends.
+						</p>
+						<pre><code>
+							class NombreDeMiClaseMadre {
+							#...
+							}
+							
+							class NombreDeMiClaseHija extends NombreDeMiClaseMadre {
+							}
+							/* esta clase hereda todos los métodos y propiedades de
+								la clase madre NombreDeMiClaseMadre
+							*/
+
+						</code></pre>
+					</section>
+					<section>
+						<h2>Objetos en PHP5</h2>
+						<p>
+							Una vez que las clases han sido declaradas, será necesario crear los objetos y utilizarlos.
+						</p>
+					</section>
+
+					<section>
+						<h2>Instanciar una clase</h2>
+						<p>
+							Para instanciar una clase, solo es necesario utilizar la palabra clave new. El objeto será creado, asignando esta instancia a una variable (la cual, adoptará la forma de objeto). Lógicamente, la clase debe haber sido declarada antes de ser instanciada, como se muestra a continuación:
+						</p>
+						<pre><code>
+							# declaro la clase
+						class Persona {
+						#...
+						}
+						# creo el objeto instanciando la clase
+						$persona = new Persona();
+
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Propiedades en PHP5</h2>
+						<p>
+							Las propiedades representan ciertas características del objeto en sí mismo. Se definen anteponiendo la palabra clave var al nombre de la variable (propiedad):</p>
+						<pre><code data-trim contenteditable>
+					
+					class Persona {
+					var $nombre;
+					var $edad;
+					var $genero;
+					}
+
+					</code></pre>
+					<p>
+						Las propiedades pueden gozar de diferentes características, como por ejemplo, la
+visibilidad: pueden ser públicas, privadas o protegidas. 
+
+					</p>
+					</section>
+					<section>
+						<h2>Propiedades Públicas</h2>
+						<p>
+							Propiedades públicas
+Las propiedades públicas se definen anteponiendo la palabra clave public al nombre de
+la variable. Éstas, pueden ser accedidas desde cualquier parte de la aplicación, sin
+restricción.
+
+						</p>
+						<pre><code>
+							class Persona {
+								public $nombre;
+								public $genero;
+							}
+
+						</code></pre>
+					</section>
+					<section>
+						<h2>Propiedades Privadas</h2>
+						<p>
+							Las propiedades privadas se definen anteponiendo la palabra clave private al nombre de la variable. Éstas solo pueden ser accedidas por la clase que las definió.
+
+						</p>
+						<pre><code>
+							class Persona {
+								public $nombre;
+								public $genero;
+								private $edad;
+							}
+
+						</code></pre>
+					</section>
+					<section>
+						<h2>Propiedades Protegidas</h2>
+						<p>
+							Las propiedades protegidas pueden ser accedidas por la propia clase que la definió, así como por las clases que la heredan, pero no, desde otras partes de la aplicación. Éstas, se definen anteponiendo la palabra clave protected al nombre de la variable:
+
+						</p>
+						<pre><code>
+							class Persona {
+								public $nombre;
+								public $genero;
+								private $edad;
+								protected $pasaporte;
+							}
+							
+
+						</code></pre>
+					</section>
+					
+				</section>
+				<section>
+					<section>
+						<h2>Paso 3</h2>
+						<h3>Patrón Arquitectónico MVC</h3>
+					</section>
+					<section>
+						<h2>Introducción</h2>
+						<p>MVC, son las siglas de <b>modelo-vista-controlador</b> (o en ingles, model-view-controller), que es uno de los tantos <b>patrónes de arquitectura de software.</b></p>
+					</section>
+					<section>
+						<h2>Arquitectura de software</h2>
+					</section>
+					<section>
+						<p>
+							<blockquote>
+								"La Arquitectura de software es la forma en la que se organizan los componentes de un sistema, interactúan y se relacionan entre sí y con el contexto, aplicando normas y principios de diseño y calidad, que fortalezcan y fomenten la usabilidad a la vez que dejan preparado el sistema, para su propia evolución".
+							</blockquote>
+						</p>
+					</section>
+					<section>
+						<h2>Tendencias de la Arquitectura de software</h2>
+						<ol>
+							<li class="fragment">La <b>Arquitectura de Sofware Orientada a Objetos</b> (como 'ingeniería' de sistemas.</li>
+							<li class="fragment">La <b>Arquitectura Estructurada</b> (como 'desarrollo' de una aplicación.</li>
+						</ol>
+					</section>
+					<section>
+						<h2>Características de la Arquitectura de Software</h2>	
+						<h3>(durante la ejecución)</h3>
+						<ul>
+							<li>Disponibilidad</li>
+							<li>Confidencialidad</li>
+							<li>Funcionalidad</li>
+							<li>Desempeño</li>
+							<li>Confiabilidad</li>
+							<li>Seguridad externa</li>
+							<li>Seguridad interna</li>							
+						</ul>
+					</section>
+					<section>
+						<h2>Características de la Arquitectura de Software</h2>	
+						<h3>(preceso de desarrollo)</h3>
+						<ul>
+							<li>Configurabilidad</li>
+							<li>Integrabilidad</li>
+							<li>Integridad</li>
+							<li>Interoperabilidad</li>
+							<li>Modificabilidad</li>
+							<li>Mantenibilidad</li>
+							<li>Portabilidad</li>
+							<li>Reusabilidad</li>
+							<li>Escalabilidad</li>
+							<li>Testeabilidad</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Arquitectura de Software</h2>
+						<h3>De lo general a lo particular</h3>
+						<ol>
+							<li class="fragment">El estilo Arquitectónico</li>
+							<li class="fragment">El Patrón Arquitectónico</li>
+							<li class="fragment">El Patrón de diseño</li>
+						</ol>
+					</section>
+					<section>
+						<h2>El Patrón MVC</h2>
+						<p>Es un <b>patrón de arquitectura de software encargado de separar la lógica de negocio de la interfaz de usuario.</b></p>
+					</section>
+					<section>
+						<h2>El Patrón MVC</h2>
+						<p>MVC divide las aplicaciones en tres niveles de abstracción</p>
+						<ul>
+							<li>Modelo</li>
+							<li>Vista</li>
+							<li>Controlador</li>
+						</ul>
+					</section>
+					<section>
+						<h2>¿Cómo funciona el patrón MVC?</h2>
+						<img src="images/mvc.png" alt="">
+					</section>
+					<section>
+						<h2>¿Cómo funciona el patrón MVC?</h2>
+						<ol>
+							<li class="fragment">usuario realiza una petición</li>
+							<li class="fragment">controlador captura el evento</li>
+							<li class="fragment">llamada al modelo</li>
+							<li class="fragment">el modelo será el encargado de interactuar con la BD</li>
+							<li class="fragment">controlador recibe la información y la envía a la vista</li>
+							<li class="fragment">la lógica de la vista, una vez procesados los datos, los entregará al usuario</li>
+						</ol>
+					</section>
+					<section>
+						<h2>El Patrón MVC en PHP</h2>
+					</section>
+					<section>
+						<h2>El Modelo</h2>
+					</section>
+					<section>
+						<h2>La Vista</h2>						
+					</section>
+					<section>
+						<h2>El controlador</h2>
+					</section>
+				</section>								
+				<section>
+					<h1>FIN</h1>
+					<h3>Capacitador: A.P.U. OCHOA, Carlos Fabián</h3>
+					<img src="images/carlos.png" alt="Capacitador">
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'zoom', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
